@@ -1,66 +1,76 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package sistemainterfaz;
 
-import funcion.WindowSystem;
 import java.awt.*;
 import java.awt.event.*;
 
 public class InicioSesion extends Frame {
-    public InicioSesion(){
+   public InicioSesion(){
         this.setTitle("Biblioteca");
         this.setSize(600,600);
         this.setLocationRelativeTo(null);
-        this.addWindowListener(new WindowSystem());
- 
-        //GridLayout
-        GridLayout esquema1 = new GridLayout(2,2);
+
+        Panel panelPrincipal = new Panel(new BorderLayout(0, 30));
+     
+        Label superior = new Label("Inicio Sesion", Label.CENTER);
+        panelPrincipal.add(superior, BorderLayout.NORTH);
         
-        //paneles
-        Panel panelPrincipal = new Panel(new BorderLayout());
+        GridLayout esquema1 = new GridLayout(2, 1, 0, 15);
         Panel panelCentral = new Panel(esquema1);
         
-        //Label y textField
-        Label superior = new Label("Log In",Label.CENTER);
-        Label correo = new Label("Correo: ",Label.CENTER);
-        Label contrasenia = new Label("Contraseña: ",Label.CENTER);
-        TextField text1 = new TextField();
-        TextField text2 = new TextField();
+        Panel subCentral = new Panel(new FlowLayout(FlowLayout.CENTER));
+        Label correo = new Label("Correo:   ");
+        TextField text1 = new TextField(25); 
+        subCentral.add(correo);
+        subCentral.add(text1);
+        
    
-        //Boton
+        Panel subCentral1 = new Panel(new FlowLayout(FlowLayout.CENTER));
+        Label contrasenia = new Label("Contraseña: ");
+        TextField text2 = new TextField(25); 
+        
+        //Opcion visual para contraseña descomentar si desea ver
+        //text2.setEchoChar('*');
+        
+        subCentral1.add(contrasenia);
+        subCentral1.add(text2);
+
+        panelCentral.add(subCentral);
+        panelCentral.add(subCentral1);
+        
+  
+        panelPrincipal.add(panelCentral, BorderLayout.CENTER);
+        
+   
         Button inicio = new Button("Iniciar Sesion");
+        
+     
+        Panel panelBoton = new Panel(new FlowLayout(FlowLayout.CENTER));
+        panelBoton.add(inicio);
+        
+        panelPrincipal.add(panelBoton, BorderLayout.SOUTH);
+        
+
         inicio.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                Principal regresar =  new Principal();
+                Principal regresar = new Principal();
                 dispose();
             }
         });
-        //creacion ventana
-        panelCentral.add(correo);
-        panelCentral.add(text1);
-        panelCentral.add(contrasenia);
-        panelCentral.add(text2);
-        panelPrincipal.add(panelCentral, BorderLayout.CENTER);
         
-        panelPrincipal.add(superior, BorderLayout.NORTH);
-        panelPrincipal.add(inicio, BorderLayout.SOUTH);
-        
+
         this.add(panelPrincipal);
         
-        this.addWindowListener(new WindowSystem());
-        
-        //Implementacion de X
-        this.addWindowListener(new WindowAdapter(){
+        // Implementación de X para cerrar
+        this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e){
                 Principal p = new Principal();
                 dispose();
             }
         });
-        this.setVisible(true);
         
+        this.setVisible(true);
     }
 }
+    

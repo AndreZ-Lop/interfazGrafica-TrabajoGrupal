@@ -29,6 +29,8 @@ public class RegistroUsuario extends Frame {
         GridLayout esquema6 = new GridLayout(1,2);
         GridLayout esquema7 = new GridLayout(1,2);
         GridLayout esquema8 = new GridLayout(1,2);
+       
+        
                 
         //Paneles
         //Principal
@@ -69,13 +71,13 @@ public class RegistroUsuario extends Frame {
         Label correo = new Label("Ingrese un correo: ",Label.CENTER);
         Label contrasenia = new Label("Cree una contraseña: ",Label.CENTER);
         
-        Label user = new Label("CREACION USUARIO",Label.CENTER);
+        Label user = new Label("Registrarme",Label.CENTER);
         
         TextField text1 = new TextField(15);
         TextField text2 = new TextField(15);
-        TextField text3 = new TextField(5);
-        TextField text4 = new TextField(5);
-        TextField text5 = new TextField(5);
+        TextField text3 = new TextField(2);
+        TextField text4 = new TextField(2);
+        TextField text5 = new TextField(4);
         TextField text6 = new TextField(15);
         TextField text7 = new TextField(15);
         
@@ -174,15 +176,15 @@ public class RegistroUsuario extends Frame {
         panelGnerl.add(text2);
         
         panelGnerl.add(fechaNac);
-        panelInter.add(subInter1,BorderLayout.EAST);
+        panelInter.add(subInter1,BorderLayout.NORTH);
         subInter1.add(dia);
         subInter1.add(text3);
         panelInter.add(subInter2,BorderLayout.CENTER);
-        subInter1.add(mes);
-        subInter1.add(text4);
-        panelInter.add(subInter3,BorderLayout.WEST);
-        subInter1.add(anio);
-        subInter1.add(text5);
+        subInter2.add(mes);
+        subInter2.add(text4);
+        panelInter.add(subInter3,BorderLayout.SOUTH);
+        subInter3.add(anio);
+        subInter3.add(text5);
         panelGnerl.add(panelInter);
         
         panelGnerl.add(mayorDeEdad);

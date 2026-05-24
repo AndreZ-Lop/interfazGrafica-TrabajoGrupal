@@ -71,9 +71,9 @@ public class RegistrarLibro extends Frame{
         TextField text1 = new TextField(15);
         TextField text2 = new TextField(15);
         TextField text3 = new TextField(15);
-        TextField text4 = new TextField(5);
-        TextField text5 = new TextField(5);
-        TextField text6 = new TextField(5);
+        TextField text4 = new TextField(2);
+        TextField text5 = new TextField(2);
+        TextField text6 = new TextField(4);
         TextField text7 = new TextField(15);
         CheckboxGroup grupoMayor = new CheckboxGroup();
         Checkbox checkS = new Checkbox("",false,grupoMayor);
@@ -111,7 +111,7 @@ public class RegistrarLibro extends Frame{
         });
         //Boton
         
-        Button salir = new Button("FINALIZAR");
+        Button salir = new Button("Registrar");
         salir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
@@ -132,15 +132,15 @@ public class RegistrarLibro extends Frame{
         panelGnerl.add(text3);
         
         panelGnerl.add(fechaPub);
-        panelInter.add(subInter1,BorderLayout.EAST);
+        panelInter.add(subInter1,BorderLayout.NORTH);
         subInter1.add(dia);
         subInter1.add(text4);
         panelInter.add(subInter2,BorderLayout.CENTER);
-        subInter1.add(mes);
-        subInter1.add(text5);
-        panelInter.add(subInter3,BorderLayout.WEST);
-        subInter1.add(anio);
-        subInter1.add(text6);
+        subInter2.add(mes);
+        subInter2.add(text5);
+        panelInter.add(subInter3,BorderLayout.SOUTH);
+        subInter3.add(anio);
+        subInter3.add(text6);
         panelGnerl.add(panelInter);
         
         panelGnerl.add(idiom);

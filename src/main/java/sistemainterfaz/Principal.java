@@ -1,8 +1,7 @@
 package sistemainterfaz;
-import funcion.WindowSystem;
+
 import java.awt.event.*;
 import java.awt.*;
-import funcion.*;
 
 
 public class Principal extends Frame{
@@ -11,7 +10,7 @@ public class Principal extends Frame{
         this.setTitle("Biblioteca");
         this.setSize(600,600);
         this.setLocationRelativeTo(null);
-        this.addWindowListener(new WindowSystem());
+
         
         Panel panelPrincipal = new Panel(new BorderLayout());
         //Label
@@ -43,8 +42,28 @@ public class Principal extends Frame{
         //botones
         //boton central
         Button prestamos = new Button("Prestamos Libros");
+        prestamos.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                Prestamo pres = new Prestamo();
+                dispose();
+            }
+        });
         Button buscarLibro = new Button("Buscar Libro");
+        buscarLibro.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Buscar bus = new Buscar();
+                dispose();
+            }
+        });
         Button devolverLibros = new Button("Devolver Libro");
+        devolverLibros.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                Devolver dev = new Devolver();
+                dispose();
+            }
+        });
         Button mostrarLibros = new Button("Mostrar lista de libros");
         Button [] botonesCentrales = {prestamos,buscarLibro,devolverLibros,mostrarLibros};
         for(int i = 0;i <botonesCentrales.length;i++){
@@ -71,6 +90,13 @@ public class Principal extends Frame{
             }
         });
         Button regiAutor = new Button("Registrar Autor");
+        regiAutor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                RegistroAutor autor = new RegistroAutor();
+                dispose();
+            }
+        });
         Button listaPrestamos = new Button("Listado Prestamos");
         Button salir = new Button("Log Out");
         salir.addActionListener(new ActionListener(){
