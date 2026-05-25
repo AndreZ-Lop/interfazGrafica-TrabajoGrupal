@@ -97,7 +97,16 @@ public class Principal extends Frame{
                 dispose();
             }
         });
+        
         Button listaPrestamos = new Button("Listado Prestamos");
+        listaPrestamos.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ListaDePrestamos hist = new ListaDePrestamos();
+                dispose();
+            } 
+        });
+        
         Button salir = new Button("Log Out");
         salir.addActionListener(new ActionListener(){
             @Override
