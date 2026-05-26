@@ -45,7 +45,7 @@ public class RegistroAutor extends Frame{
         Label nombreCompleto = new Label("Nombre Completo: ", Label.CENTER);
         Label cedula = new Label("Cedula: ", Label.CENTER);
         Label generoLibro = new Label("Pseudonimo: ", Label.CENTER);
-        Label fechaPub = new Label("Fecha la fecha de publicacion: ", Label.CENTER);
+        Label fechaPub = new Label("Fecha de nacimiento: ", Label.CENTER);
         Label dia = new Label("Dia: ",Label.CENTER);
         Label mes = new Label("Mes: ", Label.CENTER);
         Label anio = new Label("Año: ", Label.CENTER);

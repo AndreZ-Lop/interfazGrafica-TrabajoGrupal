@@ -65,6 +65,13 @@ public class Principal extends Frame{
             }
         });
         Button mostrarLibros = new Button("Mostrar lista de libros");
+        mostrarLibros.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ListaLibro libr = new ListaLibro();
+                dispose();
+            }
+        });
         Button [] botonesCentrales = {prestamos,buscarLibro,devolverLibros,mostrarLibros};
         for(int i = 0;i <botonesCentrales.length;i++){
             panelCentral1.add(botonesCentrales[i]);

@@ -1,10 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package sistemainterfaz;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Buscar extends Frame{
-    public Buscar(){
+public class ListaLibro extends Frame{
+    public ListaLibro(){
         this.setSize(600,600);
         this.setTitle("Biblioteca");
         this.setLocationRelativeTo(null);
@@ -29,22 +33,15 @@ public class Buscar extends Frame{
         //label
        
         Label titulo = new Label("Libros",Label.CENTER);
-
-        Label busqueda = new Label("Busqueda: ",Label.CENTER);
         
         Label libro = new Label("Don quijote",Label.CENTER);
         Label libro1 = new Label("El principito",Label.CENTER);
         Label libro2 = new Label("Orgullo y Prejuicio",Label.CENTER);
         
         
-        //TextField
-        TextField text = new TextField(15);
-        
         //implementar Superior
         superior.add(titulo,BorderLayout.CENTER);
        
-        textBus.add(busqueda,BorderLayout.WEST);
-        textBus.add(text,BorderLayout.CENTER);
         superior.add(textBus,BorderLayout.SOUTH);
         
         principal.add(superior,BorderLayout.NORTH);
